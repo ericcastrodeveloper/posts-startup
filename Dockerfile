@@ -1,10 +1,10 @@
 FROM openjdk:11 as build
 WORKDIR /workspace/v1/posts
 
-COPY /posts/mvnw .
-COPY /posts/.mvn .mvn
-COPY /posts/pom.xml .
-COPY /posts/src src
+COPY /mvnw .
+COPY /.mvn .mvn
+COPY /pom.xml .
+COPY /src src
 
 RUN chmod +x ./mvnw
 RUN ./mvnw install -DskipTests
