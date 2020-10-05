@@ -13,6 +13,6 @@ public interface PostService {
     public Post alterPost(Long id, PostAlterDTO postAlterDTO);
     public Post deletePost(Long id);
     public Post findPost(Long id);
-    public List<Post> listPost(PostListDTO postListDTO);
+    public List<Post> listPost();
 
 }

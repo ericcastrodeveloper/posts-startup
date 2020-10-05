@@ -33,7 +33,6 @@ public class PostServiceImpl implements PostService {
         post.setDateInsert(this.dateNow());
         post.setStatus(PostStatusEnum.ACTIVE);
         post = postRepository.save(post);
-
         return post;
     }
 
@@ -52,7 +51,7 @@ public class PostServiceImpl implements PostService {
         Post post = postExist(id);
         post.setDateDelete(this.dateNow());
         post.setStatus(PostStatusEnum.DISABLE);
-        return post;
+        return postRepository.save(post);
     }
 
     @Override
@@ -62,8 +61,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> listPost(PostListDTO postListDTO) {
-        // TODO: CRIAR
+    public List<Post> listPost() {
         return postRepository.findAll();
     }
 

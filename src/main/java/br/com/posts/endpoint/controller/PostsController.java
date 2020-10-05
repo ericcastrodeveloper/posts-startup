@@ -26,7 +26,7 @@ public class PostsController {
         return new ResponseEntity<Post>(this.postService.savePost(postSaveDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping(name = "/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Post> alterPost(@PathVariable Long id, @RequestBody PostAlterDTO postAlterDTO){
         return new ResponseEntity<Post>(this.postService.alterPost(id, postAlterDTO), HttpStatus.OK);
     }
@@ -42,8 +42,8 @@ public class PostsController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Post>> listPost(@RequestBody PostListDTO postListDTO) {
-        return new ResponseEntity<List<Post>>(this.postService.listPost(postListDTO), HttpStatus.OK);
+    public ResponseEntity<List<Post>> listPost() {
+        return new ResponseEntity<List<Post>>(this.postService.listPost(), HttpStatus.OK);
     }
 
 }
